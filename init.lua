@@ -174,9 +174,33 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
+      -- Switch buffers
+      ["<leader>n"] = { "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+      ["<leader>N"] = { "<cmd>BufferLineCyclePrev<cr>", desc = "Next Buffer" },
+
+      ["<leader>tt"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+
+      -- Telescope
+      ["<leader>fg"] = { function() require("telescope.builtin").live_grep() end, desc = "Grep files" },
+
+      -- Use python3 as python terminal
+      ["<leader>tp"] = { function() astronvim.toggle_term_cmd "python3" end, desc = "ToggleTerm python" },
+
+      -- VSCode-like CTRL-p
+      ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
+
       -- Disable some built in mappings
       ["<S-l>"] = false, -- disable switch buffer
       ["<S-h>"] = false, -- disable switch buffer
+      ["<leader>tl"] = false,
+      ["<leader>tf"] = false,
+      ["<leader>tu"] = false,
+      ["<leader>fw"] = false,
+      ["<leader>fW"] = false,
+      ["<C-h>"] = false,
+      ["<C-j>"] = false,
+      ["<C-k>"] = false,
+      ["<C-l>"] = false,
     },
     t = {
       -- setting a mapping to false will disable it
@@ -192,7 +216,8 @@ local config = {
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
-      -- { "andweeb/presence.nvim" },
+      { "tpope/vim-fugitive" },
+      { "tpope/vim-surround" },
       -- {
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
