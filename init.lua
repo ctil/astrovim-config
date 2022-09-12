@@ -174,10 +174,6 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
-      -- Switch buffers
-      ["<leader>n"] = { "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
-      ["<leader>N"] = { "<cmd>BufferLineCyclePrev<cr>", desc = "Next Buffer" },
-
       ["<leader>tt"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
 
       -- Telescope
@@ -218,6 +214,7 @@ local config = {
       -- Add plugins, the packer syntax without the "use"
       { "tpope/vim-fugitive" },
       { "tpope/vim-surround" },
+      { "tpope/vim-unimpaired" },
       -- {
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
